@@ -1,7 +1,7 @@
 //  traditional approach
 function isValidNum(num){
     if(num <= 0){
-        console.log("Invaid Number/input. \n");
+        console.log("Invalid Number/input. \n");
         return false;
     }
     return true;
@@ -36,11 +36,13 @@ function isArmstrong(num) {
         let cnt = 0;
         let mul = 1;
 
-        while (cnt < pow) {
-            mul *= mod;
-            cnt++;
-        }
-        res += mul;
+//        while (cnt < pow) {
+//            mul *= mod;
+//            cnt++;
+//        }
+//        res += mul;
+       res = res + mod ** pow;
+
     }
 
     if(res === original) {
@@ -51,12 +53,12 @@ function isArmstrong(num) {
 
 }
 
-//isArmstrong(153);
-//isArmstrong(170);
-//isArmstrong(0);
-//isArmstrong(370);
-//isArmstrong(-370);
-//isArmstrong(1634);
+isArmstrong(153);
+isArmstrong(170);
+isArmstrong(0);
+isArmstrong(370);
+isArmstrong(-370);
+isArmstrong(1634);
 
 
 ////////////  Arrow Function: checks for valid number/imput
@@ -82,7 +84,7 @@ const power_01 = (num) => {
 const isArmstrong_01 = (num) => {
 
     if(!isValidNum_01(num)) {
-        console.log(num, "Invaid Number/input. \n");
+        console.log(num, "Invalid Number/input. \n");
         return;
     }
 
@@ -97,12 +99,11 @@ const isArmstrong_01 = (num) => {
 
         let mul = 1;
         let cnt = 0;
-        while(cnt < pow) {
-            mul = mul * mod;
-            cnt++;
-        }
+        res = res + mod ** pow;
+//        while(cnt < pow) {
+//            cnt++;
+//        }
         num = Math.floor(num/10);
-    res = res + mul;
     }
 
     if(res === original) {
@@ -112,9 +113,9 @@ const isArmstrong_01 = (num) => {
     }
 }
 
-isArmstrong_01(153);
-isArmstrong_01(170);
-isArmstrong_01(0);
-isArmstrong_01(370);
-isArmstrong_01(-370);
-isArmstrong_01(1634);
+//isArmstrong_01(153);
+//isArmstrong_01(170);
+//isArmstrong_01(0);
+//isArmstrong_01(370);
+//isArmstrong_01(-370);
+//isArmstrong_01(1634);
