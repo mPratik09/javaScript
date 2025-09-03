@@ -17,32 +17,31 @@ function power(num) {
     return pow;
 }
 
+//  function to check whether the number is armstrong or not
 function isArmstrong(num) {
 
     if(!isValidNum(num)) {
         return;
     }
 
-    let temp = num;
     let original = num;
 
     let pow = power(num);
 
     let res = 0;
-    while(temp > 0) {
-        let mod = temp % 10;
-        temp = Math.floor(temp / 10);
+    while(num > 0) {
+        let mod = num % 10;
+        num = Math.floor(num / 10);
 
-        let cnt = 0;
-        let mul = 1;
-
+//        let cnt = 0;
+//        let mul = 1;
+//
 //        while (cnt < pow) {
 //            mul *= mod;
 //            cnt++;
 //        }
 //        res += mul;
        res = res + mod ** pow;
-
     }
 
     if(res === original) {
@@ -50,7 +49,6 @@ function isArmstrong(num) {
     } else {
         console.log(`${original} is NOT armstrong number.\n`);
     }
-
 }
 
 isArmstrong(153);
@@ -61,8 +59,9 @@ isArmstrong(-370);
 isArmstrong(1634);
 
 
-////////////  Arrow Function: checks for valid number/imput
+////////////  using Arrow Function
 
+//Arrow Function: checks for valid number/imput
 const isValidNum_01 = (num) => {
     if(num <= 0) {
         return false;
@@ -70,7 +69,7 @@ const isValidNum_01 = (num) => {
     return true;
 }
 
-// Arrow function: counts the number of digits
+// Arrow Function: counts the number of digits
 const power_01 = (num) => {
     let pow = 0;
     while(num > 0) {
@@ -80,7 +79,7 @@ const power_01 = (num) => {
     return pow;
 }
 
-//
+//  Arrow Function: function to check whether the number is armstrong or not
 const isArmstrong_01 = (num) => {
 
     if(!isValidNum_01(num)) {
@@ -88,21 +87,20 @@ const isArmstrong_01 = (num) => {
         return;
     }
 
-    let temp = num;
     let original = num;
-
     let pow = power_01(num);
 
     let res = 0;
     while(num > 0) {
         let mod = num % 10;
 
-        let mul = 1;
-        let cnt = 0;
-        res = res + mod ** pow;
+//        let mul = 1;
+//        let cnt = 0;
 //        while(cnt < pow) {
+//            mul = mul * mod;
 //            cnt++;
 //        }
+        res = res + mod ** pow;
         num = Math.floor(num/10);
     }
 
@@ -113,9 +111,9 @@ const isArmstrong_01 = (num) => {
     }
 }
 
-//isArmstrong_01(153);
-//isArmstrong_01(170);
-//isArmstrong_01(0);
-//isArmstrong_01(370);
-//isArmstrong_01(-370);
-//isArmstrong_01(1634);
+isArmstrong_01(153);
+isArmstrong_01(170);
+isArmstrong_01(0);
+isArmstrong_01(370);
+isArmstrong_01(-370);
+isArmstrong_01(1634);
