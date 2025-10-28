@@ -1,5 +1,8 @@
+const prompt = require("prompt-sync")();
+
 function getSquareRoot(number) {
   return Math.sqrt(number);
 }
 
-console.log(`Square root is ${getSquareRoot(10)}`);
+const num = Number(prompt("Enter a number: "));
+console.log(`Square root of ${num} is ${getSquareRoot(num)}`);
